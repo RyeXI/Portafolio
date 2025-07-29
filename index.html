@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Portafolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">Portafolio<span>Digital</span></div>
+            <div class="theme-switch-wrapper">
+                <label class="theme-switch" for="checkbox">
+                    <input type="checkbox" id="checkbox">
+                    <div class="slider round"></div>
+                </label>
+                <span class="theme-text">Modo Oscuro</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#proyectos">Proyectos</a></li>
+                    <li><a href="#sobre-mi">Sobre Mí</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+                <div class="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+
+    <section id="inicio" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Transformando ideas en experiencias digitales</h1>
+                <p>Diseñador gráfico y desarrollador frontend.</p>
+                <a href="#proyectos" class="btn">Ver mis trabajos</a>
+            </div>
+            <div class="hero-image">
+                <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Espacio de trabajo creativo">
+            </div>
+        </div>
+    </section>
+
+    <section id="proyectos" class="projects">
+        <div class="container">
+            <h2>Mis Proyectos</h2>
+            <p class="section-description">Explora algunos de mis trabajos más recientes y destacados.</p>
+            
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">Todos</button>
+                <button class="filter-btn" data-filter="diseño">Diseño</button>
+                <button class="filter-btn" data-filter="web">Web</button>
+                <button class="filter-btn" data-filter="branding">Game</button>
+            </div>
+            
+            <div class="projects-grid">
+
+            </div>
+        </div>
+    </section>
+
+    <section id="sobre-mi" class="about">
+        <div class="container">
+            <div class="about-image">
+                <img src="img/fotomia.jpeg" alt="Sobre mí">
+            </div>
+            <div class="about-content">
+                <h2>Sobre Mí</h2>
+                <p>¡Hola! Soy <b>Fernando Centeno.</b>, un diseñador y desarrollador freelancer apasionado por crear experiencias digitales memorables. Actualmente cursante de <b>Ingeniería en Informática<b></p>
+
+                <p>Mi enfoque combina estética funcional, atención al detalle y un profundo entendimiento de las necesidades del usuario para crear soluciones que no solo se ven bien, sino que también funcionan perfectamente.</p>
+                
+                <div class="skills">
+                    <h3>Mis habilidades</h3>
+                    <div class="skill-bars">
+                        <div class="skill">
+                            <p>Diseño UI/UX <span>80%</span></p>
+                            <div class="bar"><span style="width: 80%;"></span></div>
+                        </div>
+                        <div class="skill">
+                            <p>HTML/CSS <span>85%</span></p>
+                            <div class="bar"><span style="width: 85%;"></span></div>
+                        </div>
+                        <div class="skill">
+                            <p>JavaScript <span>60%</span></p>
+                            <div class="bar"><span style="width: 60%;"></span></div>
+                        </div>
+                        <div class="skill">
+                            <p>ModoBaby <span>100%</span></p>
+                            <div class="bar"><span style="width: 100%;"></span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contacto" class="contact">
+        <div class="container">
+            <h2>Contáctame</h2>
+            <p class="section-description">¿Tienes un proyecto en mente? ¡Hablemos sobre cómo puedo ayudarte!</p>
+            
+            <div class="contact-content">
+                <form class="contact-form">
+                    <div class="form-group">
+                        <input type="text" placeholder="Nombre" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" placeholder="Asunto">
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="Mensaje" required></textarea>
+                    </div>
+                    <button type="submit" class="btn">Enviar Mensaje</button>
+                </form>
+                
+                <div class="contact-info">
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <p>fernandocentenoemm@gmail.com</p>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <p>+1 234 567 890</p>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <p>Ubica, Cion</p>
+                    </div>
+                    
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-behance"></i></a>
+                        <a href="#"><i class="fab fa-dribbble"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 PortafolioDigital. Todos los derechos reservados.</p>
+            <a href="#inicio" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
