@@ -651,6 +651,32 @@ input:checked + .slider:before {
     border-radius: 50%;
 }
 
+.info-icon {
+    position: relative;
+    cursor: pointer;
+}
+
+.info-icon::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #333;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.3s;
+    pointer-events: none;
+}
+
+.info-icon:hover::after {
+    opacity: 1;
+}
+
 .whatsapp-float {
     position: fixed;
     width: 50px;

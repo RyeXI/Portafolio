@@ -284,3 +284,9 @@ function switchTheme(e) {
 }
 
 toggleSwitch.addEventListener('change', switchTheme, false);
+
+document.querySelector('.info-icon').addEventListener('click', function() {
+    const email = "fernandocentenoemm@gmail.com";
+    navigator.clipboard.writeText(email);
+    alert("Correo copiado: " + email);
+});
