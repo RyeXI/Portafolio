@@ -178,15 +178,83 @@ document.addEventListener('DOMContentLoaded', function() {
     
     observer.observe(aboutSection);
 
-    const contactForm = document.querySelector('.contact-form');
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
+    // Formulario de contacto con feedback visual
+const contactForm = document.querySelector('.contact-form');
+if (contactForm) {
+    contactForm.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        
+        const submitBtn = this.querySelector('button[type="submit"]');
+        const originalBtnText = submitBtn.textContent;
+        
+        try {
+            // Mostrar estado de carga
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Enviando...';
+            submitBtn.style.opacity = '0.7';
             
-            alert('¡Gracias por tu mensaje! Me pondré en contacto contigo pronto.');
-            this.reset();
-        });
+            // Enviar datos
+            const formData = new FormData(this);
+            const response = await fetch(this.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
+            
+            if (response.ok) {
+                // Mostrar mensaje de éxito
+                showAlert('¡Mensaje enviado con éxito!', 'success');
+                this.reset();
+            } else {
+                throw new Error('Error en el servidor');
+            }
+        } catch (error) {
+            // Mostrar mensaje de error
+            showAlert('Error al enviar el mensaje. Por favor inténtalo nuevamente.', 'error');
+            console.error('Error:', error);
+        } finally {
+            // Restaurar botón
+            submitBtn.disabled = false;
+            submitBtn.textContent = originalBtnText;
+            submitBtn.style.opacity = '1';
+        }
+    });
+}
+
+// Función para mostrar alertas
+function showAlert(message, type) {
+    const alertDiv = document.createElement('div');
+    alertDiv.className = `alert alert-${type}`;
+    alertDiv.textContent = message;
+    
+    // Estilos básicos para la alerta
+    alertDiv.style.position = 'fixed';
+    alertDiv.style.top = '20px';
+    alertDiv.style.right = '20px';
+    alertDiv.style.padding = '15px 20px';
+    alertDiv.style.borderRadius = '5px';
+    alertDiv.style.color = 'white';
+    alertDiv.style.zIndex = '1000';
+    alertDiv.style.animation = 'fadeIn 0.3s ease forwards';
+    
+    if (type === 'success') {
+        alertDiv.style.backgroundColor = '#28a745'; // Verde
+    } else {
+        alertDiv.style.backgroundColor = '#dc3545'; // Rojo
     }
+    
+    document.body.appendChild(alertDiv);
+    
+    // Eliminar la alerta después de 5 segundos
+    setTimeout(() => {
+        alertDiv.style.animation = 'fadeOut 0.3s ease forwards';
+        setTimeout(() => alertDiv.remove(), 300);
+    }, 5000);
+}
+
+
 
 });
 
