@@ -677,13 +677,45 @@ input:checked + .slider:before {
 }
 
 .whatsapp-float i {
-    margin-top: 5px;
+    margin-top: 0; 
+    line-height: 1; 
 }
 
 .whatsapp-float {
     font-size: 30px;
     animation: pulse 2s infinite;
 }
+
+@media (max-width: 768px) {
+    .theme-text {
+        display: none;
+    }
+    
+    .theme-switch-wrapper {
+        margin-left: 10px;
+    }
+    
+    .theme-switch {
+        width: 50px; 
+    }
+
+        .theme-switch {
+            height: 28px; 
+            width: 48px;  
+        }
+        
+        .slider:before {
+            height: 20px;
+            width: 20px;
+            bottom: 4px;
+        }
+        
+        input:checked + .slider:before {
+            transform: translateX(20px); 
+        }
+    
+}
+
 
 @keyframes pulse {
     0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
