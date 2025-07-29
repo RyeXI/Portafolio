@@ -119,7 +119,7 @@ document.addEventListener('DOMContentLoaded', function() {
         },
         {
             title: "Juego en Java",
-            description: "Proyecto universitario basado en el juego de nintendo multijugador.",
+            description: "Proyecto universitario basado en el juego de sega multijugador.",
             image: "img/proyectouniversitarioenjava2d.png",
             tags: ["Game"],
             category: "branding"
